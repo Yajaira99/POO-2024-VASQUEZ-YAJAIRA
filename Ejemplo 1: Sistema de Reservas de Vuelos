@@ -1,0 +1,21 @@
+class Vuelo:
+    def __init__(self, numero, origen, destino, fecha):
+        self.numero = numero
+        self.origen = origen
+        self.destino = destino
+        self.fecha = fecha
+        self.asientos_disponibles = 100
+
+    def reservar_asiento(self):
+        if self.asientos_disponibles > 0:
+            self.asientos_disponibles -= 1
+            print(f"¡Asiento reservado! Quedan {self.asientos_disponibles} asientos disponibles.")
+        else:
+            print("Lo siento, no hay asientos disponibles en este vuelo.")
+
+# Crear un vuelo
+vuelo1 = Vuelo(numero="ABC123", origen="Nueva York", destino="Los Ángeles", fecha="2024-06-01")
+
+# Reservar asientos
+vuelo1.reservar_asiento()
+vuelo1.reservar_asiento()
