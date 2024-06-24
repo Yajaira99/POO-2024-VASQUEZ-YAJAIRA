@@ -1,0 +1,28 @@
+class Producto:
+    def __init__(self, nombre, precio):
+        self.nombre = nombre
+        self.precio = precio
+
+class Carrito:
+    def __init__(self):
+        self.items = []
+
+    def agregar_producto(self, producto):
+        self.items.append(producto)
+
+    def calcular_total(self):
+        total = sum(item.precio for item in self.items)
+        return total
+
+# Crear productos
+producto1 = Producto(nombre="Camiseta", precio=25)
+producto2 = Producto(nombre="Zapatos", precio=50)
+
+# Crear carrito
+carrito = Carrito()
+carrito.agregar_producto(producto1)
+carrito.agregar_producto(producto2)
+
+# Calcular total
+total_compra = carrito.calcular_total()
+print(f"Total de la compra: ${total_compra}")
