@@ -1,0 +1,49 @@
+def ingresar_temperaturas_diarias():
+    temperaturas = []
+    for i in range(7):
+        temperatura = float(input(f"Ingrese la temperatura del día {i+1}: "))
+        temperaturas.append(temperatura)
+    return temperaturas
+
+def calcular_promedio_semanal(temperaturas):
+    total = sum(temperaturas)
+    promedio = total / len(temperaturas)
+    return promedio
+
+# Programa principal
+def main_tradicional():
+    print("Programación Tradicional - Promedio Semanal del Clima")
+    temperaturas_semana = ingresar_temperaturas_diarias()
+    promedio_semanal = calcular_promedio_semanal(temperaturas_semana)
+    print(f"El promedio semanal de temperaturas es: {promedio_semanal:.2f}")
+
+if __name__ == "__main__":
+    main_tradicional()
+
+
+
+
+class ClimaSemana:
+    def __init__(self):
+        self.__temperaturas = []
+
+    def ingresar_temperaturas_diarias(self):
+        for i in range(7):
+            temperatura = float(input(f"Ingrese la temperatura del día {i+1}: "))
+            self.__temperaturas.append(temperatura)
+
+    def calcular_promedio_semanal(self):
+        total = sum(self.__temperaturas)
+        promedio = total / len(self.__temperaturas)
+        return promedio
+
+# Programa principal
+def main_poo():
+    print("Programación Orientada a Objetos (POO) - Promedio Semanal del Clima")
+    clima_semana = ClimaSemana()
+    clima_semana.ingresar_temperaturas_diarias()
+    promedio_semanal = clima_semana.calcular_promedio_semanal()
+    print(f"El promedio semanal de temperaturas es: {promedio_semanal:.2f}")
+
+if __name__ == "__main__":
+    main_poo()
