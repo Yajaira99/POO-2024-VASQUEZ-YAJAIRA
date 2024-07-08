@@ -1,0 +1,33 @@
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self._marca = marca  # Atributo protegido
+        self._modelo = modelo
+
+    def obtener_info(self):
+        return f"Marca: {self._marca}, Modelo: {self._modelo}"
+
+    def arrancar(self):
+        return "El vehículo está arrancando"
+
+
+# Clase Derivada: Automovil
+class Automovil(Vehiculo):
+    def __init__(self, marca, modelo, color):
+        super().__init__(marca, modelo)
+        self._color = color
+
+    def obtener_info(self):
+        return f"{super().obtener_info()}, Color: {self._color}"
+
+    def arrancar(self):
+        return "El automóvil está arrancando"
+
+    def reproducir_musica(self):
+        return "Reproduciendo música en el automóvil"
+
+
+# Crear instancias
+mi_auto = Automovil(marca="Toyota", modelo="Corolla", color="Rojo")
+print(mi_auto.obtener_info())  # Imprime información del automóvil
+print(mi_auto.arrancar())  # Imprime mensaje de arranque
+print(mi_auto.reproducir_musica())  # Imprime mensaje de reproducción de música
