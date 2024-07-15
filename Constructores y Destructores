@@ -1,0 +1,23 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+        print(f"Se ha creado una persona llamada {self.nombre}.")
+
+# Crear una instancia de Persona
+juan = Persona(nombre="Luis", edad=31)
+
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+        print(f"Se ha creado una persona llamada {self.nombre}.")
+
+    def __del__(self):
+        print(f"{self.nombre} ha sido eliminado.")
+
+# Crear una instancia de Persona
+juan = Persona(nombre="Luis", edad=31)
+
+# Eliminar la instancia (simulando que ya no se necesita)
+del juan
